@@ -1,4 +1,4 @@
-package com.datastruct;
+package com.datastruct.line;
 
 import java.util.Scanner;
 
