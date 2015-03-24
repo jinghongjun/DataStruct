@@ -202,6 +202,30 @@ public class Fig {
         }
         
     }
+    
+    /**
+     * 
+     * @param gm:指向图结构的引用
+     * @param n:顶点编号
+     * @param ch:待查找的顶点
+     */
+    static void deepTraOne(GraphMatrix gm, int n, char ch){
+        int i;
+        //标记该顶点已处理过
+        gm.isTrav[n] = 1;
+        //判断
+        if (gm.mVertex[n] == ch) {
+            //输出结点数据
+            System.out.printf("->%c", gm.mVertex[n]);
+        }
+        //添加处理结点的操作
+        for (i = 0; i < gm.mVertexNum; i++) {
+            if (gm.mEdgeWeight[n][i] != GraphMatrix.MAX_VALUE && gm.isTrav[n] == 0) {
+                //递归进行遍历
+                deepTraOne(gm, i, ch);
+            }
+        }
+    }
 
     /**
      * 用于执行完整的深度优先遍历，以访问所有的顶点

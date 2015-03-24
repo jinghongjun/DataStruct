@@ -179,32 +179,6 @@ class CBTType {
         }
     }
 
-    /**
-     * 查找结点就是遍历二叉树中的每个结点中，逐个比较数据，当找到目标数据时将返回该数据所在结点的引用。程序中首先判断根结点是否为空
-     * ，然后分别向左右子树递归查找。如果当前结点的数据与查找数据相等，则返回当前结点的引用
-     * @param treeNode:待查找的二叉树的根结点
-     * @param data:待查找的结点数据
-     * @return
-     */
-    CBTType findTreeNode(CBTType treeNode, String data){
-        CBTType ptr;
-        if (treeNode == null) {
-            return null;
-        } else {
-            if (treeNode.mData.equals(data)) {
-                return treeNode;
-            } else {
-                //分别向左右子树递归查找
-                if ((ptr = findTreeNode(treeNode.mLeft, data)) != null) {
-                    return ptr;
-                } else if ((ptr = findTreeNode(treeNode.mRight, data)) != null) {
-                    return ptr;
-                } else {
-                    return null;
-                }
-            }
-        }
-    }
     
     /**
      * 获取左子树就是返回当前结点的左子树结点的值
@@ -380,6 +354,33 @@ class CBTType {
             treeLRD(treeNode.mRight);
             //显示结点数据
             treeNodeData(treeNode);
+        }
+    }
+    
+    /**
+     * 查找结点就是遍历二叉树中的每个结点中，逐个比较数据，当找到目标数据时将返回该数据所在结点的引用。程序中首先判断根结点是否为空
+     * ，然后分别向左右子树递归查找。如果当前结点的数据与查找数据相等，则返回当前结点的引用
+     * @param treeNode:待查找的二叉树的根结点
+     * @param data:待查找的结点数据
+     * @return
+     */
+    CBTType findTreeNode(CBTType treeNode, String data){
+        CBTType ptr;
+        if (treeNode == null) {
+            return null;
+        } else {
+            if (treeNode.mData.equals(data)) {
+                return treeNode;
+            } else {
+                //分别向左右子树递归查找
+                if ((ptr = findTreeNode(treeNode.mLeft, data)) != null) {
+                    return ptr;
+                } else if ((ptr = findTreeNode(treeNode.mRight, data)) != null) {
+                    return ptr;
+                } else {
+                    return null;
+                }
+            }
         }
     }
 }

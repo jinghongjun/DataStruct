@@ -2,6 +2,8 @@ package com.datastruct.line;
 
 import java.util.Scanner;
 
+import com.datastruct.DATA;
+
 /*
 链表：
     
@@ -25,13 +27,6 @@ import java.util.Scanner;
     随机访问。
 
 */
-
-//ADT
-class DATA {
-    String mKey;
-    String mName;
-    int mAge;
-}
 
 // 链表结构
 class CLType {
@@ -99,31 +94,6 @@ class CLType {
             node.mNextNode = head;
             // 3.使头引用head指向新增结点
             head = node;
-        }
-        return null;
-    }
-
-    /**
-     * 查找结点就是在链表中查找需要的元素，对于链表来说，一般可通过关键字进行查询，首先从链表头引用开始，对结点进行逐个比较，直到查找到
-     * 
-     * @param head
-     *            :链表头引用
-     * @param key
-     *            :用来在链表中进行查找结点的关键字
-     * @return
-     */
-    CLType findCLNode(CLType head, String key) {
-        CLType htemp;
-        // 保存链表头引用
-        htemp = head;
-        // 若结点有效，则进行查找
-        while (htemp != null) {
-            // 若结点关键字与传入关键字相同
-            if (htemp.mNodeData.mKey.compareTo(key) == 0) {
-                // 返回该结点引用
-                return htemp;
-            }
-            htemp = htemp.mNextNode;
         }
         return null;
     }
@@ -238,6 +208,31 @@ class CLType {
             // 处理下一结点
             htemp = htemp.mNextNode;
         }
+    }
+    
+    /**
+     * 查找结点就是在链表中查找需要的元素，对于链表来说，一般可通过关键字进行查询，首先从链表头引用开始，对结点进行逐个比较，直到查找到
+     * 
+     * @param head
+     *            :链表头引用
+     * @param key
+     *            :用来在链表中进行查找结点的关键字
+     * @return
+     */
+    CLType findCLNode(CLType head, String key) {
+        CLType htemp;
+        // 保存链表头引用
+        htemp = head;
+        // 若结点有效，则进行查找
+        while (htemp != null) {
+            // 若结点关键字与传入关键字相同
+            if (htemp.mNodeData.mKey.compareTo(key) == 0) {
+                // 返回该结点引用
+                return htemp;
+            }
+            htemp = htemp.mNextNode;
+        }
+        return null;
     }
 }
 

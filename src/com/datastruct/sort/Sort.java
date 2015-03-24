@@ -399,13 +399,7 @@ public class Sort {
             }
         }
     }
-    
-    
-    
-    
-    
-    
-    
+
     public static int[] createArrays(int size){
         int[] arrays = new int[SIZE];
         int i;
@@ -449,11 +443,7 @@ public class Sort {
         sb.append("]");
         System.out.println("第" + step + "步排序结果: " + sb.toString());
     }
-    
-    
-    
-    
-    
+
     static final int SIZE = 10;
     public static void main(String[] args) {
         int[] arrays;
@@ -513,21 +503,6 @@ public class Sort {
         mergeSort(arrays, arrays.length);
         //输出排序后的数组
         printArrays(arrays);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
     }
 

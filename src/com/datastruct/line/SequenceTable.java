@@ -2,6 +2,8 @@ package com.datastruct.line;
 
 import java.util.Scanner;
 
+import com.datastruct.DATA;
+
 /*
 线性表：
 
@@ -23,18 +25,6 @@ import java.util.Scanner;
 
 */
 
-
-
-/**
- * 顺序表结构实例
- */
-
-// ADT
-class DATA {
-    String mKey;
-    String mName;
-    int mAge;
-}
 
 // 顺序表结构
 class SLType {
@@ -113,6 +103,24 @@ class SLType {
         return 1;
     }
 
+
+    // 显示顺序表中所有的结点
+    int allSL(SLType sl) {
+        int i;
+        for (i = 1; i <= sl.mListLen; i++) {
+            System.out.printf("(%s,%s,%d)\n", sl.mListData[i].mKey, sl.mListData[i].mName, sl.mListData[i].mAge);
+        }
+        return 0;
+    }
+
+    /**
+     * 顺序表结构中的查找
+     * 查找结点可以分为按照序号查找结点和按照关键字查找两种
+     */
+    /**
+     * 1.按照关键字查找结点
+     *   关键字可以是数据元素结构中的任意一项
+     */
     // 根据序号返回数据元素
     DATA findSLByNum(SLType sl, int n) {
         // 检查元素序号是否正确
@@ -122,7 +130,11 @@ class SLType {
         }
         return sl.mListData[n];
     }
-
+    
+    /**
+     * 2.按照序号查找结点
+     * 按照序号查找结点是顺序表查找结点
+     */
     // 根据关键字查询结点
     int findSLByCont(SLType sl, String key) {
         int i;
@@ -134,15 +146,6 @@ class SLType {
             }
         }
         // 搜索整个表后，没有找到，则返回0
-        return 0;
-    }
-
-    // 显示顺序表中所有的结点
-    int allSL(SLType sl) {
-        int i;
-        for (i = 1; i <= sl.mListLen; i++) {
-            System.out.printf("(%s,%s,%d)\n", sl.mListData[i].mKey, sl.mListData[i].mName, sl.mListData[i].mAge);
-        }
         return 0;
     }
 }
